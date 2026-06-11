@@ -106,7 +106,6 @@
                                             name="remember_me" hidden>
                                         <label for="rememberMe" class="customcheck-label">Remember me</label>
                                     </div>
-                                    <a href="{{ route('forget.password') }}" class="forget">Forgot password</a>
                                 </div>
                             </div>
                             {{-- <div class="single-row">
@@ -126,10 +125,7 @@
                             <div class="form-group">
                                 <button type="submit" class="create-account-btn w-100">Sign In</button>
                             </div>
-                            <div class="form-group"> <br>
-                            <p><b>User:</b> demo@qtecsolution.net</p>
-                            <p><b>Password:</b> 87654321</p>
-                            </div>
+              
                         </div>
 
                         <!-- <div class="col-sm-6 col-lg-12 col-xl-6">
@@ -169,9 +165,7 @@
                         </div> -->
                     </div>
                 </div>
-                <div class="authentication-form-footer">
-                    <p>Don’t have an account? <a href="{{ route('signup') }}">Sign up </a></p>
-                </div>
+          
             </form>
         </div>
     </section>

@@ -23,19 +23,7 @@
                 <!-- /.info-box -->
             </div>
             <!-- /.col -->
-            <div class="col-12 col-sm-6 col-md-3">
-                <div class="info-box mb-3">
-                    <span class="info-box-icon bg-danger elevation-1"><i class="fas fa-thumbs-up"></i></span>
 
-                    <div class="info-box-content">
-                        <span class="info-box-text">Sale Discount</span>
-                        <span class="info-box-number">{{currency()->symbol??''}} {{number_format($discount,2,'.',',')}}</span>
-                    </div>
-                    <!-- /.info-box-content -->
-                </div>
-                <!-- /.info-box -->
-            </div>
-            <!-- /.col -->
 
             <!-- fix for small devices only -->
             <div class="clearfix hidden-md-up"></div>
@@ -70,22 +58,7 @@
 
         <!-- Small boxes (Stat box) -->
         <div class="row">
-            <div class="col-lg-3 col-6">
-                <!-- small box -->
-                <div class="small-box bg-info">
-                    <div class="inner">
-                        <h3>{{$total_customer}}</h3>
-                        <p>Customers</p>
-                    </div>
-                    <div class="icon">
-                        <i class="ion ion-bag"></i>
-                    </div>
-                    <a href="{{route('backend.admin.customers.index')}}" class="small-box-footer">
-                        More info
-                        <i class="fas fa-arrow-circle-right"></i>
-                    </a>
-                </div>
-            </div>
+
             <!-- ./col -->
             <div class="col-lg-3 col-6">
                 <!-- small box -->
@@ -141,38 +114,6 @@
         </div>
         <!-- /.row -->
 
-
-        <div class="row">
-            <div class="col-6">
-                <div class="card">
-                    <div class="card-header d-flex justify-content-between align-items-center">
-                        <h5 class="mb-0">Daily Total Sales <small>{{ $dateRange }}</small></h5>
-                        <div class="input-group w-auto">
-                            <div class="input-group-prepend">
-                                <span class="input-group-text">
-                                    <i class="far fa-calendar-alt"></i>
-                                </span>
-                            </div>
-                            <input type="text" class="form-control" id="reservation" style="width: 180px;">
-                        </div>
-                    </div>
-
-                    <div class="card-body">
-                        <canvas id="dailySaleLineChart"></canvas>
-                    </div>
-                </div>
-            </div>
-            <div class="col-6">
-                <div class="card">
-                    <div class="card-header">
-                        <h5>Monthly Total Sales <small>for {{ $currentYear }}</small></h5>
-                    </div>
-                    <div class="card-body">
-                        <canvas id="barChartYear"></canvas>
-                    </div>
-                </div>
-            </div>
-        </div>
     </div>
     @endcan
     <!-- /.container-fluid -->

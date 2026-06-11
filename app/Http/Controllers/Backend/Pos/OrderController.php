@@ -23,7 +23,7 @@ class OrderController extends Controller
             // return $orders;
             return DataTables::of($orders)
                 ->addIndexColumn()
-                ->addColumn('saleId', fn($data) => "#<a href='" . route('backend.admin.orders.show', $data->id) . "'>" . $data->id . "</a>")
+                ->addColumn('saleId', fn($data) => "<a  href='" . route('backend.admin.orders.show', $data->id) . "' style='text-decoration: underline;color:blue;'> #" . $data->id . "</a>")
                 // ->addColumn('customer', fn($data) => $data->customer->name ?? '-')
                 ->addColumn('item', fn($data) => $data->total_item)
                 ->addColumn('sub_total', fn($data) => number_format($data->sub_total, 2, '.', ','))
