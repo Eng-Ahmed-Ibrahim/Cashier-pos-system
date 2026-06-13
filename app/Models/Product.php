@@ -17,6 +17,7 @@ class Product extends Model
         'sku',
         'description',
         'category_id',
+        'sub_category_id',
         'brand_id',
         'unit_id',
         'price',
@@ -55,7 +56,9 @@ class Product extends Model
     {
         return $this->belongsTo(Brand::class);
     }
-    
+    public function subCategory(){
+        return $this->belongsTo(SubCategory::class);
+    }
     public function category()
     {
         return $this->belongsTo(Category::class);

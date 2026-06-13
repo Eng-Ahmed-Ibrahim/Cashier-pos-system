@@ -151,6 +151,14 @@ $route = request()->route()->getName();
                             <p>Category</p>
                         </a>
                     </li>@endif
+                    @if (auth()->user()->hasAnyPermission(['sub_category_create','sub_category_view','sub_category_update','sub_category_delete']))
+                    <li class="nav-item">
+                        <a href="{{route('backend.admin.sub_categories.index')}}"
+                            class="nav-link {{ request()->routeIs([ 'backend.admin.sub_categories.index', 'backend.admin.sub_categories.create', 'backend.admin.sub_categories.edit']) ? 'active' : '' }}">
+                            <i class="fas fa-circle nav-icon"></i>
+                            <p>Sub Category</p>
+                        </a>
+                    </li>@endif
                     {{-- @if (auth()->user()->hasAnyPermission(['unit_create','unit_view','unit_update','unit_delete']))
                     <li class="nav-item">
                         <a href="{{route('backend.admin.units.index')}}"

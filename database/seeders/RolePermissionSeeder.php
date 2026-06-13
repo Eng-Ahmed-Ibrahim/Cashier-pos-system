@@ -54,6 +54,11 @@ class RolePermissionSeeder extends Seeder
             'category_view',
             'category_update',
             'category_delete',
+            //sub category
+            'sub_category_create',
+            'sub_category_view',
+            'sub_category_update',
+            'sub_category_delete',
             //unit
             // 'unit_create',
             // 'unit_view',

@@ -20,6 +20,7 @@ use App\Http\Controllers\Backend\WebsiteSettingController;
 use App\Http\Controllers\Backend\Product\ProductController;
 use App\Http\Controllers\Backend\Product\CategoryController;
 use App\Http\Controllers\Backend\Product\PurchaseController;
+use App\Http\Controllers\Backend\Product\SubCategoryController;
 use App\Http\Controllers\Backend\RolePermission\RoleController;
 use App\Http\Controllers\Backend\RolePermission\PermissionController;
 
@@ -80,6 +81,7 @@ Route::prefix('admin')->as('backend.admin.')->middleware(['admin'])->group(funct
     Route::match(['get', 'post'], 'orders/due/collection/{id}', [OrderController::class, 'collection'])->name('due.collection');
     Route::get('collection/invoice/{id}', [OrderController::class, 'collectionInvoice'])->name('collectionInvoice');
     Route::resource('categories', CategoryController::class);
+    Route::resource('sub_categories', SubCategoryController::class);
     //start report
 
     Route::get('/sale/summery', [ReportController::class, 'saleSummery'])->name('sale.summery');

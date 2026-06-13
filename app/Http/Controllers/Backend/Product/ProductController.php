@@ -7,6 +7,7 @@ use App\Models\Brand;
 use App\Models\Product;
 use App\Models\Category;
 use App\Trait\FileHandler;
+use App\Models\SubCategory;
 use Illuminate\Http\Request;
 use App\Imports\ProductsImport;
 use Yajra\DataTables\DataTables;
@@ -105,7 +106,8 @@ class ProductController extends Controller
 
         abort_if(!auth()->user()->can('product_create'), 403);
         $categories = Category::whereStatus(true)->get();
-        return view('backend.products.create', compact('categories'));
+        $subCategories = SubCategory::whereStatus(true)->get();
+        return view('backend.products.create', compact('categories', 'subCategories'));
     }
 
     /**
@@ -144,8 +146,8 @@ class ProductController extends Controller
         $product = Product::findOrFail($id);
         $brands = Brand::whereStatus(true)->get();
         $categories = Category::whereStatus(true)->get();
-        $units = Unit::all();
-        return view('backend.products.edit', compact('brands', 'categories', 'units', 'product'));
+        $subCategories = SubCategory::whereStatus(true)->get();
+        return view('backend.products.edit', compact('brands', 'categories', 'subCategories', 'product'));
     }
 
     /**

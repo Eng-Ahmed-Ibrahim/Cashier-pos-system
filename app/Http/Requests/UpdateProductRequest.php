@@ -34,6 +34,7 @@ class UpdateProductRequest extends FormRequest
                 Rule::unique('products', 'sku')->ignore($productId),
             ],
             'category_id' => 'required|exists:categories,id',
+            'sub_category_id' => 'nullable|exists:sub_categories,id',
 
             'price' => 'nullable|numeric|min:0',
   
